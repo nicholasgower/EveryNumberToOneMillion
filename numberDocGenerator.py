@@ -1,7 +1,5 @@
 import math
 from math import floor,ceil,log10
-import pylatex as tex
-
 def intToWord(num):
     num=num
     triplets=[]
@@ -55,13 +53,12 @@ def tripleDigitToWord(num=123):
             output+="{}-{}".format(double[floor(doubleNum/10)],single[singleNum])
     return output
 def main():
-    doc=tex.Document("basic")
+    
     doc=open("everyNumToOneMillion.txt","w")
     for i in range(0,1000000,1):
         #doc.append(intToWord(i)+"\n")
         doc.write(intToWord(i)+"\n")
         print(i)
-    #doc.generate_pdf('EveryNumToOneMillion', clean_tex=False)
     doc.close()
     print("Done!")
 main()
